@@ -1,0 +1,22 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>hi</title>
+</head>
+<body>
+    <button onclick="getImg()">Get img</button>
+    <script>
+        function getImg(){
+            let xmlsvr = new XMLHttpRequest();
+            xmlsvr.open("GET", "/img");
+            xmlsvr.responseType = "blob";
+            xmlsvr.onload = ()=>{
+                console.log(xmlsvr.response);
+            }
+            xmlsvr.send();
+        }
+    </script>
+</body>
+</html>

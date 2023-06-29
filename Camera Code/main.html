@@ -1,0 +1,35 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div class="fram">
+    </div>
+    <button onclick="onStreamStart()">start stream</button>
+    <button onclick="onStreamStop()">stop stream</button>
+
+    <script>
+        let fr_ele;
+        function onStreamStart(){
+            fr_ele = document.createElement("iframe");
+            fr_ele.name = "streamer";
+            fr_ele.src = "x.png";
+            document.getElementsByClassName("fram")[0].appendChild(fr_ele);
+            let a_ele = document.createElement("a");
+            a_ele.href = "http://192.168.43.54/image";
+            a_ele.target = "streamer";
+            a_ele.click();
+        }
+        function onStreamStop(){
+            fr_ele.remove();
+            fr_ele = document.createElement("iframe");
+            fr_ele.name = "streamer";
+            fr_ele.src = "x.png";
+            document.getElementsByClassName("fram")[0].appendChild(fr_ele);
+        }
+    </script>
+</body>
+</html>

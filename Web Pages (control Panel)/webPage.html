@@ -1,0 +1,145 @@
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="UTF-8">
+    <title>Control Panel</title>
+    <!-- Development only -->
+    <!-- <link rel="stylesheet" href="webPage.css"> -->
+
+    <!-- For production -->
+    <link rel="stylesheet" href="https://drive.google.com/uc?id=1Obs79z8ctScwBTC_5wYyVDWYe29qFgVn">
+</head>
+
+<body>
+    <div class="controls">
+        <button id="symbols_horn" name="extraOption" onclick="onClickHorn()"></button>
+        <button class="forward" id="symbols_arrow_up" onclick="onclickArrowBtns('symbols_arrow_up')"></button>
+        <button id="symbols_head_light" name="extraOption" onclick="onClickLight()"></button>
+
+        <button class="left" id="symbols_arrow_left" onclick="onclickArrowBtns('symbols_arrow_left')"></button>
+        <button class="stop" id="symbols_circle_target" onclick="onclickArrowBtns('symbols_circle_target')"></button>
+        <button class="right" id="symbols_arrow_right" onclick="onclickArrowBtns('symbols_arrow_right')"></button>
+
+        <div name="extraOption" id="speed">
+            <span class="lable_speed">SPEED</span>
+            <div class="value_bar">
+                <span class="changeable_text">100</span>
+                <span></span><input type="range" min="60" max="255" value="100"><span></span>
+            </div>
+        </div>
+        <button class="backward" id="symbols_arrow_down" onclick="onclickArrowBtns('symbols_arrow_down')"></button>
+        <button name="extraOption" id="symbols_rotation_arrow" onclick="enableCameraMode()"></button>
+    </div>
+
+    <div class="camera_controls">
+        <div class="y_origin_rotation"></div>
+        <button class="startLive" id="liveStream" onclick="onCameraLive()"></button>
+        <!-- <button class="forward" id="symbols_cam_up" onclick="forCameraControls('symbols_cam_up')"></button> -->
+        <button class="captureOneImage" id="captureImage" onclick="onCameraCapture()"></button>
+
+        <!-- <button class="left" id="symbols_cam_left" onclick="forCameraControls('symbols_cam_left')"></button> -->
+        <button class="stop" id="symbols_cam_target" onclick="on_flash()"></button>
+        <!-- <button class="right" id="symbols_cam_right" onclick="forCameraControls('symbols_cam_right')"></button> -->
+
+        <button class="settings" id="settings_cam" onclick="forCameraSettings()"></button>
+        <!-- <button class="backward" id="symbols_cam_down" onclick="forCameraControls('symbols_cam_down')"></button> -->
+        <button class="control_changer" id="symbols_cam_close" onclick="enableCameraMode()"></button>
+        <div class="x_origin_rotation"></div>
+    </div>
+
+    <div class="display">
+        <div class="camera">
+            <button class="fullScreenCam" onclick="onFullScreenCam()">⛶</button>
+            <img src="none" alt="View Port" class="viewPhotage">
+        </div>
+    </div>
+
+    <div class="cam_settings_window">
+        <div class="main_settings">
+            <h2>Camera Settings</h2>
+            <div class="options option-1-resolution">
+                <span>Resolution</span>
+                <select id="resolutions">
+                    <option value="QVGA">QVGA (320 x 240)</option>
+                    <option value="CIF">CIF (352 x 288)</option>
+                    <option value="VGA" selected>VGA (640 x 480)</option>
+                    <option value="SVGA">SVGA (800 x 600)</option>
+                    <option value="XGA">XGA (1024 x 768)</option>
+                    <option value="SXGA">SXGA (1280 x 1024)</option>
+                    <option value="UXGA">UXGA (1600 x 1200)</option>
+                </select>
+            </div>
+
+            <div class="options option-2-spacial_effect">
+                <span>Spacial Effect</span>
+                <select id="spacial_effect">
+                    <option value="0" selected>No Effect</option>
+                    <option value="1">Negative</option>
+                    <option value="2">Grayscale</option>
+                    <option value="3">Red Tint</option>
+                    <option value="4">Green Tint</option>
+                    <option value="5">Blue Tint</option>
+                    <option value="6">Sepia</option>
+                </select>
+            </div>
+
+            <div class="options option-3-filters">
+                <span>Filter</span>
+                <select id="filters">
+                    <option value="0" selected>Auto</option>
+                    <option value="1">Sunny</option>
+                    <option value="2">Cloudy</option>
+                    <option value="3">Office</option>
+                    <option value="4">Home</option>
+                </select>
+            </div>
+
+            <div class="options option-4-brightness">
+                <span>Brightness</span>
+                <div class="value_bar">
+                    <span class="changeable_text">0</span>
+                    <span>-2</span><input type="range" min="-2" max="2" value="0" id="brightness"><span>2</span>
+                </div>
+            </div>
+
+            <div class="options option-5-contrast">
+                <span>Contrast</span>
+                <div class="value_bar">
+                    <span class="changeable_text">0</span>
+                    <span>-2</span><input type="range" min="-2" max="2" value="0" id="contrast"><span>2</span>
+                </div>
+            </div>
+            
+            <div class="options option-6-saturation">
+                <span>Saturation</span>
+                <div class="value_bar">
+                    <span class="changeable_text">0</span>
+                    <span>-2</span><input type="range" min="-2" max="2" value="0" id="saturation"><span>2</span>
+                </div>
+            </div>
+
+            <div class="options option-7-quality">
+                <span>Quality</span>
+                <div class="value_bar">
+                    <span class="changeable_text">10</span>
+                    <span>10</span><input type="range" min="10" max="63" value="63" id="quality"><span>63</span>
+                </div>
+            </div>
+            <button class="apply_changes" onclick="onApplySettings()">Apply Changes ✅</button>
+            <button class="close" onclick="forCameraSettings()">Close</button>
+        </div>
+    </div>
+    <!-- javascript work  -->
+    <!-- Development only -->
+    <!-- <script src="webPage.js"></script>
+    <script src="symbols.js"></script> -->
+
+    <!-- For production -->
+    <script type="text/javascript" src="https://drive.google.com/uc?id=1t_MHHDxCGf4LnITZPup1M6A_ChPCzmMb" for_="icons"></script>
+    <script src="https://drive.google.com/uc?id=1UvMzk9UAZBdNXkOmuxhQKA4nIAhefLzR" for_="logic code"></script>
+
+</body>
+</html>

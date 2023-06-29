@@ -1,0 +1,29 @@
+-- sensor settings --
+set_brightness(s, 0);
+set_contrast(s, 0);
+set_saturation(s, 0);
+set_special_effect(s, 0);
+set_wb_mode(s, 0);
+
+-- camera config settings --
+jpeg_quality => 10(lower) to 63(higher)
+frame_size => (by pixel references) FRAMESIZE_ + QVGA|CIF|VGA|SVGA|XGA|SXGA|UXGA
+
+pixel reference -- screen resolution
+QVGA - 320 x 240
+CIF - 352 x 288
+VGA - 640 x 480
+SVGA - 800x600
+XGA - 1024x768
+SXGA - 1280 × 1024
+UXGA - 1600 x 1200
+
+---------------------
+resolution
+spacial effect
+filter
+brightness
+contrast
+saturation
+quality
+
